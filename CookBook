@@ -2,10 +2,10 @@ What is Ffuf:
 ffuf is a fast web fuzzer written in Go that allows typical directory discovery, virtual host discovery (without DNS records) and GET and POST parameter fuzzing.
 This program is useful for pentesters, ethical hackers and forensics experts. It also can be used for security tests.
 
-**How to install ffuf:**
-**Command:**
+How to install ffuf:
+Command:
       sudo apt install ffuf
-**Options available in ffuf:**
+Options available in ffuf:
 Fuzz Faster U Fool - v2.1.0-dev
 HTTP OPTIONS:
   -H                  Header `"Name: Value"`, separated by colon. Multiple -H flags are accepted.
@@ -106,3 +106,11 @@ EXAMPLE USAGE:
     ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr "VAL" -c
 
   More information and examples: https://github.com/ffuf/ffuf
+
+Example use cases:
+Typical directory discovery:
+ffuf -w <Wordlists> -u <web page (or) URL>/FUZZ
+Virtual host discovery:
+ffuf -w <Wordlists> -u <web page (or) URL> -H <Host> -fs <port number>
+GET parameter fuzzing:
+ffuf -w <Wordlists> -u <Web page (or) URL>FUZZ=test_value -fs <port number>
