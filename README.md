@@ -1,1 +1,2 @@
-# Pavan-cookbook
+# Ffuf
+**A COOKBOOK ON FFUF**
